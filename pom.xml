@@ -12,6 +12,7 @@
 	<artifactId>common-domains</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>common-domains</name>
+	<!--<packaging>jar</packaging>-->
 	<description>Demo project for Spring Boot Common Domains Project</description>
 	<properties>
 		<java.version>17</java.version>
@@ -47,7 +48,9 @@
 	<build>
 		<plugins>
 
-			<plugin>
+			<!-- spring-boot-maven-plugin -->
+
+			<!--<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -61,9 +64,26 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>-->
+
+			<!-- maven-jar-plugin  -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Automatic-Module-Name>com.smartcoding.commondomains</Automatic-Module-Name>
+						</manifestEntries>
+					</archive>
+				</configuration>
 			</plugin>
 
-			<!-- Google jib plugin  -->
+
+
+			<!-- Google jib-maven-plugin  -->
+
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
