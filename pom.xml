@@ -80,8 +80,6 @@
 				</configuration>
 			</plugin>
 
-
-
 			<!-- Google jib-maven-plugin  -->
 
 			<plugin>
@@ -94,11 +92,12 @@
 					</from>
 					<to>
 						<image>registry.hub.docker.com//${dockerImageName}</image>
+						<tags>
+							<tag>latest</tag>
+							<tag>${project.version}</tag>
+						</tags>
 					</to>
-					<tags>
-						<tag>latest</tag>
-						<tag>${project.version}</tag>
-					</tags>
+
 				</configuration>
 			</plugin>
 
